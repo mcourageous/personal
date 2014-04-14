@@ -13,6 +13,8 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', ListView.as_view(
-    	queryset=PersonalityDetails.objects.all().order_by('-date'),
-    	template_name='index.html')),
+    	queryset=PersonalityDetails.objects.all().order_by('name'),
+    	template_name="tools/index.html")),
 )
+
+
