@@ -1,0 +1,16 @@
+{% extends "tools/base.html" %}
+
+{% block content%}
+
+	{% for person in object_list %}
+	<div class="name_tag">
+		<h2>{{person.name}}</h2>
+	</div>
+	{% endfor %}
+	<div class="pic_tag">
+		{% load staticfiles %}
+		<img src="{{STATIC_URL}}images/courage.jpg" title="Pic" />
+	</div>
+	
+
+{% endblock %}
