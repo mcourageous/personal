@@ -15,6 +15,11 @@ urlpatterns = patterns('',
     url(r'^$', ListView.as_view(
     	queryset=PersonalityDetails.objects.all().order_by('name'),
     	template_name="tools/index.html")),
+
+    url(r'^(P?<pk>\d+)$', DetailView.as_view(
+    	model = PersonalityDetails,
+    	template_name="tools/details.html")),
 )
+
 
 

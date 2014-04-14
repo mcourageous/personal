@@ -1,9 +1,6 @@
 {% extends "tools/base.html" %}
 
-{% block content%}
-
-	{% for person in object_list %}
-	<div class="name_tag">
+<div class="name_tag">
 		<h2><a href="/{{person.id}}">{{person.name}}</a></h2>
 	</div>
 	 <div class="title_tag">
@@ -13,24 +10,19 @@
 	 	<h3>{{ person.date }}</h3>
 	 </div>
 
-	<!--  <div class="software">
+	 <div class="software">
 	 	<h2> Software </h2>
 	 	<p>Software: {{ person.software|safe|linebreaks }}</p>
-	 </div> -->
+	 </div>
 
-	<!--  <div class="hardware">
+	 <div class="hardware">
 	 	<h2>Hardware</h2>
 	 	<p>{{ person.hardware|safe|linebreaks }}</p>
 	 </div>
- -->
-	 <!-- <div class="dream_setup">
+
+	 <div class="dream_setup">
 	 	<h2> Dream Setup</h2>
 	 	<p>Dream Setup: {{ person.dream_setup }}</p>
 	 </div>
- -->
-	 
-	{% endfor %}
-	
-	
 
-{% endblock %}
+	 <div class=
