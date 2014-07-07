@@ -1,24 +1,24 @@
 from django.conf.urls import patterns, include, url
-from django.views.generic import ListView, DetailView
-from tools.models import PersonalityDetails
+from django.conf import settings
+
 
 
 from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'Site.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
+	 url(r'^', include('blog.urls', namespace='blog')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', ListView.as_view(
-    	queryset=PersonalityDetails.objects.all().order_by('name'),
-    	template_name="tools/index.html")),
+   
+    
+   
 
-    url(r'^(P?<pk>\d+)$', DetailView.as_view(
-    	model = PersonalityDetails,
-    	template_name="tools/details.html")),
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+        'document_root': settings.MEDIA_ROOT,
+    }),
+   
+
 )
 
 

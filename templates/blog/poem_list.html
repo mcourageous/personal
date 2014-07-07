@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %}
+{% block extrahead %}
+<link href="/static/css/blog.css" rel="stylesheet" media="screen">
+
+{% endblock %}
+
+
+{% block content %}
+
+
+{% for poem in poems_list %}
+<ul>
+<div class="title">
+	<li><a href="{% url "blog:poem_detail" poem.pk %}"><h3>{{ poem.date }}  | {{ poem.title }}</h3></a></li>
+</div>
+</ul>
+<hr>
+{% endfor %}
+
+
+{% endblock %}

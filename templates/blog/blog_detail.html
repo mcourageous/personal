@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %}
+% load url from future %}
+
+{% block extrahead %}
+<link href="/static/css/blog.css" rel="stylesheet" media="screen">
+
+{% endblock %}
+
+{% block content %}
+<div class="detail-title">
+
+	<p>{{ bl.title }}</p>
+</div>
+
+<div class="detial-content">
+	<p>{{ bl.content }}</p>
+</div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "blog/base.html" %}
+
+{% block extrahead %}
+<link href="/static/css/blog.css" rel="stylesheet" media="screen">
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<ul>
+{% for lyric in lyrics_list %}
+	<div class="title">
+	<li><a href="{% url "blog:detail" lyric.pk %}"><h4>{{ lyric.date }} |    {{ lyric.title }}</h4></a></li>
+	<hr>
+	</div>
+
+
+{% endfor %}
+</ul>
+
+
+{% endblock %}

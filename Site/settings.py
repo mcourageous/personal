@@ -15,9 +15,14 @@ from os.path import join
 TEMPLATE_DIRS = (
     join(BASE_DIR, 'templates'),
     )
-STATICFILEs_DIRS = (
+STATICFILES_DIRS = (
     join(BASE_DIR, 'static'),
     )
+
+MEDIA_DIRS = (
+    join(BASE_DIR, 'media'),
+    )
+
 STATIC_ROOT= ''
 
 # Quick-start development settings - unsuitable for production
@@ -37,13 +42,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'tools',
+    'blog',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -89,3 +95,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
+
+

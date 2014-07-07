@@ -1,0 +1,20 @@
+{% extends "blog/base.html" %}
+{% block extrahead %}
+<link href="/static/css/blog.css" rel="stylesheet" media="screen">
+
+{% endblock %}
+
+{% block content %}
+
+
+{% for story in object_list %}
+<ul>
+<div class="title">
+	<li><a href="{% url "blog:story_detail" story.pk %}"><h4>{{ story.date }} | {{ story.title }}</h4></a></li>
+	<hr>
+	</div>
+</ul>
+{% endfor %}
+
+
+{% endblock %}
